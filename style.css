@@ -16,20 +16,20 @@ html {
 body {
   font-family: sans-serif;
   line-height: 1.88889;
-  color: #555753;
+  color: #37474f;
   margin: 0;
   padding: 0;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#398235+0,8ab66b+53,c9de96+100 */
-  background: #398235;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
+  background: #cedce7;
   /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #398235 0%, #8ab66b 53%, #c9de96 100%);
+  background: -moz-linear-gradient(left, #cedce7 0%, #596a72 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #398235 0%, #8ab66b 53%, #c9de96 100%);
+  background: -webkit-linear-gradient(left, #cedce7 0%, #596a72 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #398235 0%, #8ab66b 53%, #c9de96 100%);
+  background: linear-gradient(to right, #cedce7 0%, #596a72 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#398235', endColorstr='#c9de96',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */ }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=1 );
+  /* IE6-9 */ }
 
 p {
   margin-top: 0;
@@ -38,133 +38,98 @@ p {
 h3 {
   font: italic normal 1.4em, sans-serif;
   letter-spacing: 1px;
-  margin-bottom: 0;
-  color: #7D775C; }
+  margin-top: 0;
+  color: #37474f;
+  text-shadow: 0 5px 10px #37474f; }
 
 a:link {
   font-weight: bold;
   text-decoration: none;
-  color: #B7A5DF; }
+  color: #00796b; }
 
 a:visited {
   font-weight: bold;
-  text-decoration: none;
-  color: #D4CDDC; }
+  text-decoration: none; }
 
 a:hover, a:focus, a:active {
   text-decoration: underline;
-  color: #9685BA; }
+  color: white; }
 
 abbr {
   border-bottom: none; }
 
-.sidebar {
-  background: lightgrey; }
-  .sidebar .wrapper {
-    font: 10px verdana, sans-serif;
-    padding: 10px;
-    margin-top: 150px;
-    width: 130px; }
-  .sidebar h3.select {
-    margin: 10px 0 5px 0;
-    width: 97px;
-    height: 16px;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden; }
-  .sidebar h3.archives {
-    margin: 25px 0 5px 0;
-    width: 57px;
-    height: 14px;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden; }
-  .sidebar h3.resources {
-    margin: 25px 0 5px 0;
-    width: 63px;
-    height: 10px;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden; }
-  .sidebar ul {
-    margin: 0;
-    padding: 0; }
-  .sidebar li {
-    line-height: 1.3em;
-    display: block;
-    padding-top: 5px;
-    margin-bottom: 5px;
-    list-style-type: none; }
-    .sidebar li a:link {
-      color: #988F5E; }
-    .sidebar li a:visited {
-      color: #B3AE94; }
-
 .page-wrapper {
-  margin: 0 2rem;
+  margin: 0 4rem;
   display: flex;
   flex-direction: column; }
 
 .intro {
   width: 100%; }
   .intro header {
-    border-radius: 20px;
-    box-shadow: 0 0 20px #006003;
-    padding-bottom: 100px;
-    height: 100%;
+    min-width: 400px;
+    padding-bottom: 2rem;
+    color: #e1f5fe;
+    font: italic 1.1em/2.2 georgia;
+    margin: 0 auto;
+    max-width: 600px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.35); }
+    text-shadow: 0 15px 30px #37474f; }
     .intro header h1 {
-      font-size: 2.5em;
-      margin-top: 50px;
+      font-size: 3em;
       margin-bottom: 0; }
     .intro header h2 {
-      font-size: 1em; }
+      font-size: 1.5em; }
   .intro .summary {
     margin: 20px 20px 20px 10px;
-    border: 1px solid black;
-    background: lightblue; }
+    text-shadow: 0 15px 30px #37474f;
+    padding-bottom: 2rem; }
   .intro .summary p {
+    color: white;
     font: italic 1.1em/2.2 georgia;
     text-align: center; }
   .intro .preamble {
-    padding: 0px 10px 0 10px;
-    border: 1px solid black;
-    background: lightblue; }
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0px 50px #37474f; }
 
 .supporting {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 1rem;
-  border: 1px solid black;
-  background: lightgreen; }
+  padding-top: 2rem; }
   .supporting div {
-    border: 1px solid black;
-    padding: 1rem;
-    width: 32%; }
+    padding: 2rem;
+    width: 32%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0px 50px #37474f; }
   .supporting .explanation {
-    background: lightgrey;
     margin-right: 1rem; }
   .supporting .participation {
-    background: lightblue;
     margin-right: 1rem; }
-  .supporting .benefits {
-    background: lightgrey; }
   .supporting .requirements {
-    margin: 1rem 0;
-    background: lightblue;
+    margin: 2rem 0;
     width: 100%; }
 
 footer {
   text-align: center;
-  background: #91979c;
-  border: 1px solid black;
-  width: 100%; }
+  background: #37474f;
+  padding: 0.66667rem;
+  width: 100%;
+  box-shadow: 100px 0 0px #37474f, -100px 0 0px #37474f; }
   footer a:link, footer a:visited {
+    color: white;
     margin-right: 20px; }
 
+.sidebar {
+  display: none; }
+
 @media (max-width: 960px) {
+  body {
+    line-height: 1.5rem; }
+  .page-wrapper {
+    margin: 0 2rem; }
   .supporting .explanation {
     width: 48.5%;
     margin-right: 10px; }
@@ -173,18 +138,16 @@ footer {
     margin-left: 10px;
     margin-right: 0; }
   .supporting .benefits {
-    margin-top: 1rem; }
+    margin-top: 2rem; }
   .supporting .benefits, .supporting .requirements {
-    background: lightgrey;
     width: 100%; } }
 
 @media (max-width: 660px) {
   .page-wrapper {
-    margin: 0; }
+    margin: 0 0.5rem; }
   .supporting {
     display: flex;
     flex-direction: row; }
     .supporting .explanation, .supporting .participation, .supporting .benefits, .supporting .requirements {
-      margin: 1rem 0;
-      background: lightgrey;
+      margin: 2rem 0;
       width: 100%; } }

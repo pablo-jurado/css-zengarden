@@ -9,23 +9,34 @@
 
 
 //------------------------------------------------------------------------------
-// colors
+// Mixins
 //------------------------------------------------------------------------------
-@mixin green-gradient() {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#398235+0,8ab66b+53,c9de96+100 */
-  background: rgb(57,130,53); /* Old browsers */
-  background: -moz-linear-gradient(-45deg, rgba(57,130,53,1) 0%, rgba(138,182,107,1) 53%, rgba(201,222,150,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, rgba(57,130,53,1) 0%,rgba(138,182,107,1) 53%,rgba(201,222,150,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, rgba(57,130,53,1) 0%,rgba(138,182,107,1) 53%,rgba(201,222,150,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#398235', endColorstr='#c9de96',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+@mixin main-gradient() {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
+  background: rgb(206,220,231); /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=1 ); /* IE6-9 */
+
 }
-$color-white: rgba(255, 255, 255, .35);
+
+@mixin main-box() {
+  background: $transparent-color;
+  border-radius: 20px;
+  box-shadow: 0 0px 50px $main-color;
+}
+
 
 //------------------------------------------------------------------------------
 // Variables
 //------------------------------------------------------------------------------
 $main-margin: 2rem;
-$main-padding: $main-margin/2;
+$main-padding: 2rem;
+$transparent-color: rgba(255, 255, 255, .1);
+$main-color: #37474f;
+$secondary-color: #e1f5fe;
+$link-color: #00796b;
 //------------------------------------------------------------------------------
 // basic elements
 //------------------------------------------------------------------------------
@@ -43,10 +54,10 @@ html {
 body {
 	font-family: sans-serif;
 	line-height: 1.88889;
-	color: #555753;
+	color: $main-color;
 	margin: 0;
 	padding: 0;
-  @include green-gradient;
+  @include main-gradient;
 }
 
 p {
@@ -57,25 +68,25 @@ p {
 h3 {
 	font: italic normal 1.4em, sans-serif;
 	letter-spacing: 1px;
-	margin-bottom: 0;
-	color: #7D775C;
+	margin-top: 0;
+	color: $main-color;
+  text-shadow: 0 5px 10px $main-color;
 }
 
 a:link {
 	font-weight: bold;
 	text-decoration: none;
-	color: #B7A5DF;
+  color: $link-color;
 }
 
 a:visited {
 	font-weight: bold;
 	text-decoration: none;
-	color: #D4CDDC;
 }
 
 a:hover, a:focus, a:active {
 	text-decoration: underline;
-	color: #9685BA;
+	color: white;
 }
 
 abbr {
@@ -86,69 +97,8 @@ abbr {
 // specific divs
 //------------------------------------------------------------------------------
 
-.sidebar {
-  background: lightgrey;
-
-  .wrapper {
-  	font: 10px verdana, sans-serif;
-  	padding: 10px;
-  	margin-top: 150px;
-  	width: 130px;
-  }
-
-  h3.select {
-  	margin: 10px 0 5px 0;
-  	width: 97px;
-  	height: 16px;
-
-  	text-indent: 100%;
-  	white-space: nowrap;
-  	overflow: hidden;
-  }
-
-  h3.archives {
-  	margin: 25px 0 5px 0;
-  	width:57px;
-  	height: 14px;
-
-  	text-indent: 100%;
-  	white-space: nowrap;
-  	overflow: hidden;
-  }
-
-  h3.resources {
-  	margin: 25px 0 5px 0;
-  	width:63px;
-  	height: 10px;
-
-  	text-indent: 100%;
-  	white-space: nowrap;
-  	overflow: hidden;
-  }
-
-  ul {
-  	margin: 0;
-  	padding: 0;
-  }
-
-  li {
-  	line-height: 1.3em;
-  	display: block;
-  	padding-top: 5px;
-  	margin-bottom: 5px;
-  	list-style-type: none;
-
-    a:link {
-    	color: #988F5E;
-    }
-    a:visited {
-    	color: #B3AE94;
-    }
-  }
-}
-
 .page-wrapper {
-	margin: 0 $main-margin;
+	margin: 0 $main-margin*2;
   display: flex;
   flex-direction: column;
   // background: url('http://cdn.wallpapersafari.com/87/0/e2o9zv.jpg') no-repeat top left;
@@ -158,38 +108,41 @@ abbr {
 	width: 100%;
 
   header {
-    border-radius: 20px;
-    box-shadow: 0 0 20px #006003;
-  	padding-bottom: 100px;
-  	height: 100%;
+  	min-width: 400px;
+  	padding-bottom: $main-padding;
+    color: $secondary-color;
+    font: italic 1.1em/2.2 georgia;
+    margin: 0 auto;
+    max-width: 600px;
     text-align: center;
-    background: $color-white;
+    text-shadow: 0 15px 30px $main-color;
+    // @include main-box;
+
 
     h1 {
-      font-size: 2.5em;
-    	margin-top: 50px;
+      font-size: 3em;
       margin-bottom: 0;
     }
 
     h2 {
-    	font-size: 1em;
+    	font-size: 1.5em;
     }
   }
 
   .summary {
   	margin: 20px 20px 20px 10px;
-    border: 1px solid black;
-    background: lightblue;
+    text-shadow: 0 15px 30px $main-color;
+    padding-bottom: $main-padding;
   }
   .summary p {
+    color: white;
   	font: italic 1.1em/2.2 georgia;
   	text-align: center;
   }
 
   .preamble {
-  	padding: 0px 10px 0 10px;
-    border: 1px solid black;
-    background: lightblue;
+    padding: $main-padding;
+    @include main-box;
   }
 }
 
@@ -198,51 +151,117 @@ abbr {
   flex-wrap: wrap;
   justify-content:space-between;
 	padding-top: $main-padding;
-  border: 1px solid black;
-  background: lightgreen;
 
   div {
-    border: 1px solid black;
     padding: $main-padding;
     width: 32%;
+    @include main-box;
   }
 
   .explanation {
-    background: lightgrey;
-    margin-right: $main-padding;
+    margin-right: $main-padding/2;
 
   }
 
   .participation {
-    background: lightblue;
-    margin-right: $main-padding;
+    margin-right: $main-padding/2;
   }
 
   .benefits {
-    background: lightgrey;
+
   }
 
   .requirements {
     margin: $main-padding 0;
-    background: lightblue;
     width: 100%;
   }
 }
 
 footer {
 	text-align: center;
-  background: #91979c;
-  border: 1px solid black;
+  background: $main-color;
+  padding: $main-padding/3;
   width: 100%;
+  box-shadow: 100px 0 0px $main-color, -100px 0 0px $main-color;
 
   a:link, a:visited {
-  	margin-right: 20px;
+    color: white;
+    margin-right: 20px;
   }
 }
 
+.sidebar {
+  display: none;
+  // background: lightgrey;
+  //
+  // .wrapper {
+  // 	font: 10px verdana, sans-serif;
+  // 	padding: 10px;
+  // 	margin-top: 150px;
+  // 	width: 130px;
+  // }
+  //
+  // h3.select {
+  // 	margin: 10px 0 5px 0;
+  // 	width: 97px;
+  // 	height: 16px;
+  //
+  // 	text-indent: 100%;
+  // 	white-space: nowrap;
+  // 	overflow: hidden;
+  // }
+  //
+  // h3.archives {
+  // 	margin: 25px 0 5px 0;
+  // 	width:57px;
+  // 	height: 14px;
+  //
+  // 	text-indent: 100%;
+  // 	white-space: nowrap;
+  // 	overflow: hidden;
+  // }
+  //
+  // h3.resources {
+  // 	margin: 25px 0 5px 0;
+  // 	width:63px;
+  // 	height: 10px;
+  //
+  // 	text-indent: 100%;
+  // 	white-space: nowrap;
+  // 	overflow: hidden;
+  // }
+  //
+  // ul {
+  // 	margin: 0;
+  // 	padding: 0;
+  // }
+  //
+  // li {
+  // 	line-height: 1.3em;
+  // 	display: block;
+  // 	padding-top: 5px;
+  // 	margin-bottom: 5px;
+  // 	list-style-type: none;
+  //
+  //   a:link {
+  //   	color: #988F5E;
+  //   }
+  //   a:visited {
+  //   	color: #B3AE94;
+  //   }
+  // }
+}
 
 // tablet layout
 @media (max-width: 960px) {
+  body {
+    line-height: 1.5rem;
+  }
+
+  .page-wrapper {
+  	margin: 0 $main-margin;
+  }
+
   .supporting {
 
     .explanation {
@@ -261,7 +280,6 @@ footer {
     }
 
     .benefits, .requirements  {
-      background: lightgrey;
       width: 100%;
     }
   }
@@ -271,7 +289,7 @@ footer {
 // phone layout
 @media (max-width: 660px) {
   .page-wrapper {
-  	margin: 0;
+  	margin: 0 $main-margin/4;
   }
 
   .supporting {
@@ -280,7 +298,6 @@ footer {
 
     .explanation, .participation, .benefits, .requirements  {
       margin: $main-padding 0;
-      background: lightgrey;
       width: 100%;
     }
   }
