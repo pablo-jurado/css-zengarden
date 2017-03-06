@@ -7,12 +7,25 @@
 
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 
+//------------------------------------------------------------------------------
+// Variables
+//------------------------------------------------------------------------------
+$main-margin: 2rem;
+$main-padding: $main-margin/2;
 
-/* basic elements */
+//------------------------------------------------------------------------------
+// basic elements
+//------------------------------------------------------------------------------
+* {
+  box-sizing: border-box;
+}
+
 html {
 	margin: 0;
 	padding: 0;
+  font-size: 16px;
 }
+
 body {
 	font-family: sans-serif;
 	line-height: 1.88889;
@@ -20,42 +33,49 @@ body {
 	background: #fff;
 	margin: 0;
 	padding: 0;
-	}
+}
+
 p {
 	margin-top: 0;
 	text-align: justify;
-	}
+}
+
 h3 {
 	font: italic normal 1.4em, sans-serif;
 	letter-spacing: 1px;
 	margin-bottom: 0;
 	color: #7D775C;
-	}
+}
+
 a:link {
 	font-weight: bold;
 	text-decoration: none;
 	color: #B7A5DF;
-	}
+}
+
 a:visited {
 	font-weight: bold;
 	text-decoration: none;
 	color: #D4CDDC;
-	}
+}
+
 a:hover, a:focus, a:active {
 	text-decoration: underline;
 	color: #9685BA;
-	}
+}
+
 abbr {
 	border-bottom: none;
-	}
+}
 
-
-/* specific divs */
+//------------------------------------------------------------------------------
+// specific divs
+//------------------------------------------------------------------------------
 .page-wrapper {
-	padding: 0 175px 0 110px;
-	margin: 0;
-	position: relative;
+	margin: 0 $main-margin;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
   // background: url('http://cdn.wallpapersafari.com/87/0/e2o9zv.jpg') no-repeat top left;
 }
 
@@ -97,32 +117,45 @@ abbr {
 }
 
 .supporting {
-	padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+	padding: $main-padding;
 	margin-bottom: 40px;
   border: 1px solid black;
   background: lightgreen;
 
+  div {
+    border: 1px solid black;
+    padding: $main-padding;
+  }
+
   .explanation {
     background: lightgrey;
+    width: 33.33%;
   }
 
   .participation {
     background: lightblue;
+    width: 33.33%;
+
   }
 
   .benefits {
     background: lightgrey;
+    width: 33.33%;
   }
 
   .requirements {
     background: lightblue;
+    width: 100%;
   }
 }
 
 footer {
 	text-align: center;
-  border: 1px solid black;
   background: #91979c;
+  border: 1px solid black;
+  width: 100%;
 
   a:link, a:visited {
   	margin-right: 20px;
@@ -187,6 +220,24 @@ footer {
     }
     a:visited {
     	color: #B3AE94;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .page-wrapper {
+  	margin: 0;
+  }
+
+  .supporting {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    .explanation, .participation, .benefits, .requirements  {
+      background: lightgrey;
+      flex: 1;
+      width: 100%;
     }
   }
 }

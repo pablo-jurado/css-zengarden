@@ -4,10 +4,13 @@
 /* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
 /* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
-/* basic elements */
+* {
+  box-sizing: border-box; }
+
 html {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 16px; }
 
 body {
   font-family: sans-serif;
@@ -44,12 +47,11 @@ a:hover, a:focus, a:active {
 abbr {
   border-bottom: none; }
 
-/* specific divs */
 .page-wrapper {
-  padding: 0 175px 0 110px;
-  margin: 0;
-  position: relative;
-  border: 1px solid black; }
+  margin: 0 2rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column; }
 
 .intro {
   width: 100%;
@@ -77,23 +79,33 @@ abbr {
     border: 1px solid black; }
 
 .supporting {
-  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
   margin-bottom: 40px;
   border: 1px solid black;
   background: lightgreen; }
+  .supporting div {
+    border: 1px solid black;
+    padding: 1rem; }
   .supporting .explanation {
-    background: lightgrey; }
+    background: lightgrey;
+    width: 33.33%; }
   .supporting .participation {
-    background: lightblue; }
+    background: lightblue;
+    width: 33.33%; }
   .supporting .benefits {
-    background: lightgrey; }
+    background: lightgrey;
+    width: 33.33%; }
   .supporting .requirements {
-    background: lightblue; }
+    background: lightblue;
+    width: 100%; }
 
 footer {
   text-align: center;
+  background: #91979c;
   border: 1px solid black;
-  background: #91979c; }
+  width: 100%; }
   footer a:link, footer a:visited {
     margin-right: 20px; }
 
@@ -139,3 +151,15 @@ footer {
       color: #988F5E; }
     .sidebar li a:visited {
       color: #B3AE94; }
+
+@media (max-width: 600px) {
+  .page-wrapper {
+    margin: 0; }
+  .supporting {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; }
+    .supporting .explanation, .supporting .participation, .supporting .benefits, .supporting .requirements {
+      background: lightgrey;
+      flex: 1;
+      width: 100%; } }
