@@ -12,19 +12,19 @@
 // Mixins
 //------------------------------------------------------------------------------
 @mixin main-gradient() {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
-  background: rgb(206,220,231); /* Old browsers */
-  background: -moz-linear-gradient(left, rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=1 ); /* IE6-9 */
-
+  // /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
+  // background-color: rgb(206,220,231); /* Old browsers */
+  // background-color: -moz-linear-gradient(left, rgba(206,220,231,1) 0%, rgba(89,106,114,1) 100%); /* FF3.6-15 */
+  // background-color: -webkit-linear-gradient(left, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  // background-color: linear-gradient(to right, rgba(206,220,231,1) 0%,rgba(89,106,114,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=1 ); /* IE6-9 */
+  background-color: rgb(89,106,114);
 }
 
 @mixin main-box() {
-  background: $transparent-color;
+  background-color: $transparent-color;
   border-radius: 20px;
-  box-shadow: 0 0px 50px $main-color;
+  box-shadow: 0 0px 50px darken($main-color, 15%) ;
 }
 
 
@@ -33,7 +33,7 @@
 //------------------------------------------------------------------------------
 $main-margin: 2rem;
 $main-padding: 2rem;
-$transparent-color: rgba(255, 255, 255, .1);
+$transparent-color: rgba(255, 255, 255, .5);
 $main-color: #37474f;
 $secondary-color: #e1f5fe;
 $link-color: #00796b;
@@ -57,6 +57,10 @@ body {
 	color: $main-color;
 	margin: 0;
 	padding: 0;
+  background-image:url('img/background.png') ;
+  background-size:contain;
+  background-repeat: no-repeat;
+
   @include main-gradient;
 }
 
@@ -70,7 +74,6 @@ h3 {
 	letter-spacing: 1px;
 	margin-top: 0;
 	color: $main-color;
-  text-shadow: 0 5px 10px $main-color;
 }
 
 a:link {
@@ -101,7 +104,6 @@ abbr {
 	margin: 0 $main-margin*2;
   display: flex;
   flex-direction: column;
-  // background: url('http://cdn.wallpapersafari.com/87/0/e2o9zv.jpg') no-repeat top left;
 }
 
 .intro {
@@ -115,7 +117,7 @@ abbr {
     margin: 0 auto;
     max-width: 600px;
     text-align: center;
-    text-shadow: 0 15px 30px $main-color;
+    text-shadow: 0 15px 30px darken($main-color, 50%);
     // @include main-box;
 
 
@@ -131,7 +133,7 @@ abbr {
 
   .summary {
   	margin: 20px 20px 20px 10px;
-    text-shadow: 0 15px 30px $main-color;
+    text-shadow: 0 15px 30px darken($main-color, 50%);
     padding-bottom: $main-padding;
   }
   .summary p {

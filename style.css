@@ -19,17 +19,10 @@ body {
   color: #37474f;
   margin: 0;
   padding: 0;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
-  background: #cedce7;
-  /* Old browsers */
-  background: -moz-linear-gradient(left, #cedce7 0%, #596a72 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #cedce7 0%, #596a72 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #cedce7 0%, #596a72 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=1 );
-  /* IE6-9 */ }
+  background-image: url("img/background.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #596a72; }
 
 p {
   margin-top: 0;
@@ -39,8 +32,7 @@ h3 {
   font: italic normal 1.4em, sans-serif;
   letter-spacing: 1px;
   margin-top: 0;
-  color: #37474f;
-  text-shadow: 0 5px 10px #37474f; }
+  color: #37474f; }
 
 a:link {
   font-weight: bold;
@@ -73,7 +65,7 @@ abbr {
     margin: 0 auto;
     max-width: 600px;
     text-align: center;
-    text-shadow: 0 15px 30px #37474f; }
+    text-shadow: 0 15px 30px black; }
     .intro header h1 {
       font-size: 3em;
       margin-bottom: 0; }
@@ -81,7 +73,7 @@ abbr {
       font-size: 1.5em; }
   .intro .summary {
     margin: 20px 20px 20px 10px;
-    text-shadow: 0 15px 30px #37474f;
+    text-shadow: 0 15px 30px black;
     padding-bottom: 2rem; }
   .intro .summary p {
     color: white;
@@ -89,9 +81,9 @@ abbr {
     text-align: center; }
   .intro .preamble {
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    box-shadow: 0 0px 50px #37474f; }
+    box-shadow: 0 0px 50px #181e22; }
 
 .supporting {
   display: flex;
@@ -101,9 +93,9 @@ abbr {
   .supporting div {
     padding: 2rem;
     width: 32%;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    box-shadow: 0 0px 50px #37474f; }
+    box-shadow: 0 0px 50px #181e22; }
   .supporting .explanation {
     margin-right: 1rem; }
   .supporting .participation {
