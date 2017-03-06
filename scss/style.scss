@@ -7,32 +7,46 @@
 
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 
+
+//------------------------------------------------------------------------------
+// colors
+//------------------------------------------------------------------------------
+@mixin green-gradient() {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#398235+0,8ab66b+53,c9de96+100 */
+  background: rgb(57,130,53); /* Old browsers */
+  background: -moz-linear-gradient(-45deg, rgba(57,130,53,1) 0%, rgba(138,182,107,1) 53%, rgba(201,222,150,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(57,130,53,1) 0%,rgba(138,182,107,1) 53%,rgba(201,222,150,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(57,130,53,1) 0%,rgba(138,182,107,1) 53%,rgba(201,222,150,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#398235', endColorstr='#c9de96',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+$color-white: rgba(255, 255, 255, .35);
+
 //------------------------------------------------------------------------------
 // Variables
 //------------------------------------------------------------------------------
 $main-margin: 2rem;
 $main-padding: $main-margin/2;
-
 //------------------------------------------------------------------------------
 // basic elements
 //------------------------------------------------------------------------------
-* {
-  box-sizing: border-box;
-}
-
 html {
 	margin: 0;
 	padding: 0;
   font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
 	font-family: sans-serif;
 	line-height: 1.88889;
 	color: #555753;
-	background: #fff;
 	margin: 0;
 	padding: 0;
+  @include green-gradient;
 }
 
 p {
@@ -71,99 +85,8 @@ abbr {
 //------------------------------------------------------------------------------
 // specific divs
 //------------------------------------------------------------------------------
-.page-wrapper {
-	margin: 0 $main-margin;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  // background: url('http://cdn.wallpapersafari.com/87/0/e2o9zv.jpg') no-repeat top left;
-}
-
-.intro {
-	width: 100%;
-  border: 1px solid black;
-  background: #ececec;
-
-  header {
-  	padding-bottom: 100px;
-  	height: 100%;
-    border: 1px solid black;
-    text-align: center;
-
-    h1 {
-      font-size: 2.5em;
-    	margin-top: 50px;
-      margin-bottom: 0;
-    }
-
-    h2 {
-    	font-size: 1em;
-    }
-  }
-
-  .summary {
-  	margin: 20px 20px 20px 10px;
-    border: 1px solid black;
-  }
-  .summary p {
-  	font: italic 1.1em/2.2 georgia;
-  	text-align: center;
-  }
-
-  .preamble {
-  	padding: 0px 10px 0 10px;
-    border: 1px solid black;
-  }
-}
-
-.supporting {
-  display: flex;
-  flex-wrap: wrap;
-	padding: $main-padding;
-	margin-bottom: 40px;
-  border: 1px solid black;
-  background: lightgreen;
-
-  div {
-    border: 1px solid black;
-    padding: $main-padding;
-  }
-
-  .explanation {
-    background: lightgrey;
-    width: 33.33%;
-  }
-
-  .participation {
-    background: lightblue;
-    width: 33.33%;
-
-  }
-
-  .benefits {
-    background: lightgrey;
-    width: 33.33%;
-  }
-
-  .requirements {
-    background: lightblue;
-    width: 100%;
-  }
-}
-
-footer {
-	text-align: center;
-  background: #91979c;
-  border: 1px solid black;
-  width: 100%;
-
-  a:link, a:visited {
-  	margin-right: 20px;
-  }
-}
 
 .sidebar {
-  border: 1px solid black;
   background: lightgrey;
 
   .wrapper {
@@ -224,19 +147,140 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
+.page-wrapper {
+	margin: 0 $main-margin;
+  display: flex;
+  flex-direction: column;
+  // background: url('http://cdn.wallpapersafari.com/87/0/e2o9zv.jpg') no-repeat top left;
+}
+
+.intro {
+	width: 100%;
+
+  header {
+    border-radius: 20px;
+    box-shadow: 0 0 20px #006003;
+  	padding-bottom: 100px;
+  	height: 100%;
+    text-align: center;
+    background: $color-white;
+
+    h1 {
+      font-size: 2.5em;
+    	margin-top: 50px;
+      margin-bottom: 0;
+    }
+
+    h2 {
+    	font-size: 1em;
+    }
+  }
+
+  .summary {
+  	margin: 20px 20px 20px 10px;
+    border: 1px solid black;
+    background: lightblue;
+  }
+  .summary p {
+  	font: italic 1.1em/2.2 georgia;
+  	text-align: center;
+  }
+
+  .preamble {
+  	padding: 0px 10px 0 10px;
+    border: 1px solid black;
+    background: lightblue;
+  }
+}
+
+.supporting {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+	padding-top: $main-padding;
+  border: 1px solid black;
+  background: lightgreen;
+
+  div {
+    border: 1px solid black;
+    padding: $main-padding;
+    width: 32%;
+  }
+
+  .explanation {
+    background: lightgrey;
+    margin-right: $main-padding;
+
+  }
+
+  .participation {
+    background: lightblue;
+    margin-right: $main-padding;
+  }
+
+  .benefits {
+    background: lightgrey;
+  }
+
+  .requirements {
+    margin: $main-padding 0;
+    background: lightblue;
+    width: 100%;
+  }
+}
+
+footer {
+	text-align: center;
+  background: #91979c;
+  border: 1px solid black;
+  width: 100%;
+
+  a:link, a:visited {
+  	margin-right: 20px;
+  }
+}
+
+
+// tablet layout
+@media (max-width: 960px) {
+  .supporting {
+
+    .explanation {
+      width: 48.5%;
+      margin-right: 10px;
+    }
+
+    .participation {
+      width: 48%;
+      margin-left: 10px;
+      margin-right: 0;
+    }
+
+    .benefits {
+      margin-top: $main-padding;
+    }
+
+    .benefits, .requirements  {
+      background: lightgrey;
+      width: 100%;
+    }
+  }
+
+}
+
+// phone layout
+@media (max-width: 660px) {
   .page-wrapper {
   	margin: 0;
   }
 
   .supporting {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
 
     .explanation, .participation, .benefits, .requirements  {
+      margin: $main-padding 0;
       background: lightgrey;
-      flex: 1;
       width: 100%;
     }
   }

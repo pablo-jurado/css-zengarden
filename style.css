@@ -4,21 +4,32 @@
 /* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
 /* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
-* {
-  box-sizing: border-box; }
-
 html {
   margin: 0;
   padding: 0;
-  font-size: 16px; }
+  font-size: 16px;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
 
 body {
   font-family: sans-serif;
   line-height: 1.88889;
   color: #555753;
-  background: #fff;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#398235+0,8ab66b+53,c9de96+100 */
+  background: #398235;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #398235 0%, #8ab66b 53%, #c9de96 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #398235 0%, #8ab66b 53%, #c9de96 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #398235 0%, #8ab66b 53%, #c9de96 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#398235', endColorstr='#c9de96',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
 
 p {
   margin-top: 0;
@@ -47,70 +58,7 @@ a:hover, a:focus, a:active {
 abbr {
   border-bottom: none; }
 
-.page-wrapper {
-  margin: 0 2rem;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column; }
-
-.intro {
-  width: 100%;
-  border: 1px solid black;
-  background: #ececec; }
-  .intro header {
-    padding-bottom: 100px;
-    height: 100%;
-    border: 1px solid black;
-    text-align: center; }
-    .intro header h1 {
-      font-size: 2.5em;
-      margin-top: 50px;
-      margin-bottom: 0; }
-    .intro header h2 {
-      font-size: 1em; }
-  .intro .summary {
-    margin: 20px 20px 20px 10px;
-    border: 1px solid black; }
-  .intro .summary p {
-    font: italic 1.1em/2.2 georgia;
-    text-align: center; }
-  .intro .preamble {
-    padding: 0px 10px 0 10px;
-    border: 1px solid black; }
-
-.supporting {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  margin-bottom: 40px;
-  border: 1px solid black;
-  background: lightgreen; }
-  .supporting div {
-    border: 1px solid black;
-    padding: 1rem; }
-  .supporting .explanation {
-    background: lightgrey;
-    width: 33.33%; }
-  .supporting .participation {
-    background: lightblue;
-    width: 33.33%; }
-  .supporting .benefits {
-    background: lightgrey;
-    width: 33.33%; }
-  .supporting .requirements {
-    background: lightblue;
-    width: 100%; }
-
-footer {
-  text-align: center;
-  background: #91979c;
-  border: 1px solid black;
-  width: 100%; }
-  footer a:link, footer a:visited {
-    margin-right: 20px; }
-
 .sidebar {
-  border: 1px solid black;
   background: lightgrey; }
   .sidebar .wrapper {
     font: 10px verdana, sans-serif;
@@ -152,14 +100,91 @@ footer {
     .sidebar li a:visited {
       color: #B3AE94; }
 
-@media (max-width: 600px) {
+.page-wrapper {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column; }
+
+.intro {
+  width: 100%; }
+  .intro header {
+    border-radius: 20px;
+    box-shadow: 0 0 20px #006003;
+    padding-bottom: 100px;
+    height: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.35); }
+    .intro header h1 {
+      font-size: 2.5em;
+      margin-top: 50px;
+      margin-bottom: 0; }
+    .intro header h2 {
+      font-size: 1em; }
+  .intro .summary {
+    margin: 20px 20px 20px 10px;
+    border: 1px solid black;
+    background: lightblue; }
+  .intro .summary p {
+    font: italic 1.1em/2.2 georgia;
+    text-align: center; }
+  .intro .preamble {
+    padding: 0px 10px 0 10px;
+    border: 1px solid black;
+    background: lightblue; }
+
+.supporting {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border: 1px solid black;
+  background: lightgreen; }
+  .supporting div {
+    border: 1px solid black;
+    padding: 1rem;
+    width: 32%; }
+  .supporting .explanation {
+    background: lightgrey;
+    margin-right: 1rem; }
+  .supporting .participation {
+    background: lightblue;
+    margin-right: 1rem; }
+  .supporting .benefits {
+    background: lightgrey; }
+  .supporting .requirements {
+    margin: 1rem 0;
+    background: lightblue;
+    width: 100%; }
+
+footer {
+  text-align: center;
+  background: #91979c;
+  border: 1px solid black;
+  width: 100%; }
+  footer a:link, footer a:visited {
+    margin-right: 20px; }
+
+@media (max-width: 960px) {
+  .supporting .explanation {
+    width: 48.5%;
+    margin-right: 10px; }
+  .supporting .participation {
+    width: 48%;
+    margin-left: 10px;
+    margin-right: 0; }
+  .supporting .benefits {
+    margin-top: 1rem; }
+  .supporting .benefits, .supporting .requirements {
+    background: lightgrey;
+    width: 100%; } }
+
+@media (max-width: 660px) {
   .page-wrapper {
     margin: 0; }
   .supporting {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row; }
     .supporting .explanation, .supporting .participation, .supporting .benefits, .supporting .requirements {
+      margin: 1rem 0;
       background: lightgrey;
-      flex: 1;
       width: 100%; } }
