@@ -19,9 +19,10 @@ body {
   color: #37474f;
   margin: 0;
   padding: 0;
-  background-image: url("img/background.png");
-  background-size: contain;
+  background-image: url("img/background.png"), url("img/footer.png");
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top, bottom;
   background-color: #596a72; }
 
 p {
@@ -106,12 +107,11 @@ abbr {
 
 footer {
   text-align: center;
-  background: #37474f;
+  background: white;
   padding: 0.66667rem;
   width: 100%;
-  box-shadow: 100px 0 0px #37474f, -100px 0 0px #37474f; }
+  box-shadow: 100px 0 0px white, -100px 0 0px white; }
   footer a:link, footer a:visited {
-    color: white;
     margin-right: 20px; }
 
 .sidebar {

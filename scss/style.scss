@@ -57,10 +57,10 @@ body {
 	color: $main-color;
 	margin: 0;
 	padding: 0;
-  background-image:url('img/background.png') ;
-  background-size:contain;
+  background-image:url('img/background.png') , url('img/footer.png');
   background-repeat: no-repeat;
-
+  background-size:contain;
+  background-position: top, bottom;
   @include main-gradient;
 }
 
@@ -181,13 +181,13 @@ abbr {
 
 footer {
 	text-align: center;
-  background: $main-color;
+  background: white;
   padding: $main-padding/3;
   width: 100%;
-  box-shadow: 100px 0 0px $main-color, -100px 0 0px $main-color;
+  box-shadow: 100px 0 0px white, -100px 0 0px white;
+;
 
   a:link, a:visited {
-    color: white;
     margin-right: 20px;
   }
 }
