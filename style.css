@@ -74,12 +74,14 @@ abbr {
       font-size: 1.5em; }
   .intro .summary {
     margin: 20px 20px 20px 10px;
-    text-shadow: 0 15px 30px black;
+    text-shadow: 0 15px 20px black;
     padding-bottom: 2rem; }
-  .intro .summary p {
-    color: white;
-    font: italic 1.1em/2.2 georgia;
-    text-align: center; }
+    .intro .summary p {
+      color: white;
+      font: italic 1.1em/2.2 georgia;
+      text-align: center; }
+    .intro .summary a {
+      color: #8bc34a; }
   .intro .preamble {
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.5);
@@ -109,6 +111,7 @@ footer {
   text-align: center;
   background: white;
   padding: 0.66667rem;
+  margin-top: 2rem;
   width: 100%;
   box-shadow: 100px 0 0px white, -100px 0 0px white; }
   footer a:link, footer a:visited {
@@ -135,11 +138,14 @@ footer {
     width: 100%; } }
 
 @media (max-width: 660px) {
+  body {
+    background-size: auto; }
   .page-wrapper {
     margin: 0 0.5rem; }
   .supporting {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    padding-top: 0.5rem; }
     .supporting .explanation, .supporting .participation, .supporting .benefits, .supporting .requirements {
-      margin: 2rem 0;
+      margin: 0.5rem 0;
       width: 100%; } }
