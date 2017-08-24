@@ -41,8 +41,8 @@ $linkColor: #00796b;
 // basic elements
 //------------------------------------------------------------------------------
 html {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
   font-size: 16px;
   box-sizing: border-box;
 }
@@ -52,11 +52,11 @@ html {
 }
 
 body {
-	font-family: sans-serif;
-	line-height: 1.88889;
-	color: $mainColor;
-	margin: 0;
-	padding: 0;
+  font-family: sans-serif;
+  line-height: 1.88889;
+  color: $mainColor;
+  margin: 0;
+  padding: 0;
   background-image:url('img/background.png') , url('img/footer.png');
   background-repeat: no-repeat;
   background-size:contain;
@@ -65,35 +65,35 @@ body {
 }
 
 p {
-	margin-top: 0;
-	text-align: justify;
+  margin-top: 0;
+  text-align: justify;
 }
 
 h3 {
-	font: italic normal 1.4em, sans-serif;
-	letter-spacing: 1px;
-	margin-top: 0;
-	color: $mainColor;
+  font: italic normal 1.4em, sans-serif;
+  letter-spacing: 1px;
+  margin-top: 0;
+  color: $mainColor;
 }
 
 a:link {
-	font-weight: bold;
-	text-decoration: none;
+  font-weight: bold;
+  text-decoration: none;
   color: $linkColor;
 }
 
 a:visited {
-	font-weight: bold;
-	text-decoration: none;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 a:hover, a:focus, a:active {
-	text-decoration: underline;
-	color: white;
+  text-decoration: underline;
+  color: white;
 }
 
 abbr {
-	border-bottom: none;
+  border-bottom: none;
 }
 
 //------------------------------------------------------------------------------
@@ -101,17 +101,17 @@ abbr {
 //------------------------------------------------------------------------------
 
 .page-wrapper {
-	margin: 0 $mainMargin*2;
+  margin: 0 $mainMargin*2;
   display: flex;
   flex-direction: column;
 }
 
 .intro {
-	width: 100%;
+  width: 100%;
 
   header {
-  	min-width: 400px;
-  	padding-bottom: $mainPadding;
+    min-width: 400px;
+    padding-bottom: $mainPadding;
     color: $secondaryColor;
     font: italic 1.1em/2.2 georgia;
     margin: 0 auto;
@@ -125,19 +125,19 @@ abbr {
     }
 
     h2 {
-    	font-size: 1.5em;
+      font-size: 1.5em;
     }
   }
 
   .summary {
-  	margin: 20px 20px 20px 10px;
+    margin: 20px 20px 20px 10px;
     text-shadow: 0 15px 20px darken($mainColor, 50%);
     padding-bottom: $mainPadding;
 
     p {
       color: white;
-   	  font: italic 1.1em/2.2 georgia;
-   	  text-align: center;
+      font: italic 1.1em/2.2 georgia;
+      text-align: center;
    }
    a {
       color: #8bc34a;
@@ -154,7 +154,7 @@ abbr {
   display: flex;
   flex-wrap: wrap;
   justify-content:space-between;
-	padding-top: $mainPadding;
+  padding-top: $mainPadding;
 
   div {
     padding: $mainPadding;
@@ -177,13 +177,12 @@ abbr {
 }
 
 footer {
-	text-align: center;
+  text-align: center;
   background: white;
   padding: $mainPadding/3;
   margin-top: $mainMargin;
   width: 100%;
   box-shadow: 100px 0 0px white, -100px 0 0px white;
-;
 
   a:link, a:visited {
     margin-right: 20px;
@@ -192,64 +191,6 @@ footer {
 
 .sidebar {
   display: none;
-  // background: lightgrey;
-  //
-  // .wrapper {
-  // 	font: 10px verdana, sans-serif;
-  // 	padding: 10px;
-  // 	margin-top: 150px;
-  // 	width: 130px;
-  // }
-  //
-  // h3.select {
-  // 	margin: 10px 0 5px 0;
-  // 	width: 97px;
-  // 	height: 16px;
-  //
-  // 	text-indent: 100%;
-  // 	white-space: nowrap;
-  // 	overflow: hidden;
-  // }
-  //
-  // h3.archives {
-  // 	margin: 25px 0 5px 0;
-  // 	width:57px;
-  // 	height: 14px;
-  //
-  // 	text-indent: 100%;
-  // 	white-space: nowrap;
-  // 	overflow: hidden;
-  // }
-  //
-  // h3.resources {
-  // 	margin: 25px 0 5px 0;
-  // 	width:63px;
-  // 	height: 10px;
-  //
-  // 	text-indent: 100%;
-  // 	white-space: nowrap;
-  // 	overflow: hidden;
-  // }
-  //
-  // ul {
-  // 	margin: 0;
-  // 	padding: 0;
-  // }
-  //
-  // li {
-  // 	line-height: 1.3em;
-  // 	display: block;
-  // 	padding-top: 5px;
-  // 	margin-bottom: 5px;
-  // 	list-style-type: none;
-  //
-  //   a:link {
-  //   	color: #988F5E;
-  //   }
-  //   a:visited {
-  //   	color: #B3AE94;
-  //   }
-  // }
 }
 
 // tablet layout
@@ -259,7 +200,7 @@ footer {
   }
 
   .page-wrapper {
-  	margin: 0 $mainMargin;
+    margin: 0 $mainMargin;
   }
 
   .supporting {
@@ -292,7 +233,7 @@ footer {
     background-size:auto;
   }
   .page-wrapper {
-  	margin: 0 $mainMargin/4;
+    margin: 0 $mainMargin/4;
   }
 
   .supporting {
