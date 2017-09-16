@@ -1,6 +1,6 @@
 # Css Zen Garden
 
-Hi there! I am a developer / designer from Houston and this is my version of [css zen garden](http://www.csszengarden.com/) utilizing just sass.
+Hi there! I am a developer/designer from Houston and this is my version of [CSS Zen Garden](http://www.csszengarden.com/) utilizing just SASS.
 
 [Link](https://pablo-jurado.github.io/css-zengarden/)
 
